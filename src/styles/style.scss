@@ -1,0 +1,146 @@
+@import "reset.css";
+$offset : 20px;
+body {
+    overflow: hidden;
+}
+.site-wrapper {
+    height: 100vh;
+
+}
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    flex-direction: column;
+    
+}
+.login-screen {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../media/login.png");
+    background-size: cover;
+}
+.login-form {
+    margin: 10px;
+}
+
+
+.chat-screen {
+    height: 100vh;
+    background-image: url("../media/winxp.jpg");
+}
+.window-body {
+    height: 100%;
+}
+.tabs {
+    position:relative;
+    top:$offset;
+}
+.chat-box {
+    top:$offset;
+    width: 70%;
+    height: 70%;
+    background-color: #ffffff;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.window {
+    width: 800px;
+    min-width: 300px;
+    height: 600px;
+    min-height: 500px;
+}
+.window-body {
+    overflow: hidden;
+}
+[role="tablist"]  {
+    position: relative;
+    left:$offset;
+}
+ [role="tabpanel"] {
+    position: relative;
+    left:$offset;
+}
+.input-box {
+    display:inline !important;
+    
+}
+#message-form-input {
+    width: 494px;
+}
+.user-info {  
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    position: absolute;
+    left: 610px;
+    top: $offset + 525px;
+    max-width: 150px;
+    & p {
+        position: relative;
+        text-overflow:ellipsis;
+        overflow: hidden;
+        white-space: nowrap;}
+
+}
+.generated-avatar {
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+    
+}
+.generated-avatar-login {
+    width: 25px;
+    height: 25px;
+
+}
+.bottom-right {
+    border: 1px solid black;
+}
+.message-avatar {
+    border-radius: 10%;
+    box-shadow: 1px 2px 5px 1px rgba(109,109,109,0.2);
+}
+
+.submit-message-form {
+    margin-top: 10px;
+    width: 60%;
+    display: inline;
+    position: relative;
+    top:($offset + 10px);
+    left:$offset;
+}
+.send-button {
+    margin-left: 10px;
+}
+
+.title-bar {
+    cursor: move;
+    
+  }
+
+.Message {
+    display:block;
+    margin-bottom: -1px;
+    min-height: 50px;
+    border-width: 1px;
+    border-style: solid;
+    border-image-source: linear-gradient(90deg, rgba(255,255,255,0) 0%, #919b9c 50%, rgba(255,255,255,1) 100%);
+    border-image-slice: 1;
+    padding: 5px;
+}
+
+.message-author {
+    text-shadow: 2px 2px 2px rgba(109,109,109,0.46);
+    position: relative;
+    top: -20px;
+    left: 30px;
+
+}
+.message-text {
+    margin-bottom: 10px;
+}
