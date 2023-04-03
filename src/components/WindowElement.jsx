@@ -69,20 +69,25 @@ export function WindowElement(props) {
     }
     function handleSubmit(event) {
         event.preventDefault();
-        setFormState("");  
-        client.publish(
-            {   room: "general",
-                message: {
-                    id: Date.now(),
-                    author: {
-                        username: context.username,
-                        avatar: context.avatar,
-                        },
-                    text: formState,
-                    color: context.color,
-                },
-                
-        });
+        setFormState("");
+        if (formState === ""){
+            alert("Please enter a message");
+        }
+        else { 
+            client.publish(
+                {   room: "general",
+                    message: {
+                        id: Date.now(),
+                        author: {
+                            username: context.username,
+                            avatar: context.avatar,
+                            },
+                        text: formState,
+                        color: context.color,
+                    },
+                    
+            });
+        }
     }
 
 
@@ -99,17 +104,25 @@ export function WindowElement(props) {
         }
     },[chatRoom, ready]);
 
+    const [ windowHide, setWindowHide ] = useState("inherit");
+    const exitWindow = () => {
+        setWindowHide("none");
+        setTimeout(() => {
+            context.setUsername("");
+        }, 800);
+    }
+
 
 
 
     return (
         
-        <div className="window" style={{position:"absolute", top:position.y, left:position.x}} ref={draggableRef}  >
+        <div className="window" style={{position:"absolute", top:position.y, left:position.x, display: windowHide}} ref={draggableRef}  >
             
             <div className="title-bar" onMouseDown={handleMouseDown} >
                 <div className="title-bar-text">Webchat</div>
                 <div className="title-bar-controls">
-                    <button aria-label="Close"></button>
+                    <button aria-label="Close" onClick={exitWindow}></button>
                     </div>
             </div>
             <div className="window-body">
@@ -117,8 +130,6 @@ export function WindowElement(props) {
                 <div className="tabs">
                     <menu role="tablist" aria-label="Sample Tabs">
                         <button role="tab" aria-selected="true" aria-controls="tab-A">general-chat</button>
-                        <button role="tab" aria-controls="tab-B">Tab B</button>
-                        <button role="tab" aria-controls="add-new-tab">+</button>
                     </menu>
                 </div>
                   

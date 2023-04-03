@@ -13,6 +13,7 @@ body {
   justify-content: center;
   padding: 10px;
   flex-direction: column;
+  text-shadow: 0px 0px 5px #ffffff;
 }
 
 .login-screen {
@@ -20,12 +21,24 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../media/login.png");
+  background-image: linear-gradient(180deg, rgb(0, 48, 156) 0%, rgb(87, 127, 225) 91%);
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .login-form {
   margin: 10px;
+}
+
+.login-form button {
+  margin: 5px;
+}
+
+.color-button {
+  width: 25px;
+  height: 25px;
+  margin-top: 10px;
+  border: hidden;
 }
 
 .chat-screen {
@@ -104,8 +117,10 @@ body {
 }
 
 .generated-avatar-login {
+  margin-top: 10px;
   width: 25px;
   height: 25px;
+  border: 1px solid black;
 }
 
 .bottom-right {
@@ -143,6 +158,8 @@ body {
   border-image-source: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #919b9c 50%, rgb(255, 255, 255) 100%);
   border-image-slice: 1;
   padding: 5px;
+  width: calc(100% + 14px);
+  box-sizing: border-box;
 }
 
 .message-author {

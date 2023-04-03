@@ -37,7 +37,7 @@ export function LogInScreen(props) {
             </form>
             <div>Avatar:</div>
             <img src={`data:image/svg+xml;utf8,${generatedAvatar}`} alt="avatar" className="generated-avatar-login" />
-            <input type="color" value={context.color} onChange={(e) => {context.setColor(e.target.value)}}></input>
+            <input type="color" className="color-button" value={context.color} onChange={(e) => {context.setColor(e.target.value)}}></input>
             </div>
         </div>
     );

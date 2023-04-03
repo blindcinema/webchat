@@ -13,6 +13,7 @@ body {
     justify-content: center;
     padding: 10px;
     flex-direction: column;
+    text-shadow: 0px 0px 5px #ffffff;
     
 }
 .login-screen {
@@ -20,11 +21,23 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("../media/login.png");
+    background-image: linear-gradient(180deg, rgba(0,48,156,1) 0%, rgba(87,127,225,1) 91%);
     background-size: cover;
+    background-repeat: no-repeat;
 }
 .login-form {
     margin: 10px;
+
+    
+}
+.login-form button {
+    margin: 5px;
+}
+.color-button {
+    width: 25px;
+    height: 25px;
+    margin-top: 10px;
+    border: hidden;
 }
 
 
@@ -46,6 +59,7 @@ body {
     background-color: #ffffff;
     overflow-y: scroll;
     overflow-x: hidden;
+
 }
 .window {
     width: 800px;
@@ -94,8 +108,10 @@ body {
     
 }
 .generated-avatar-login {
+    margin-top: 10px;
     width: 25px;
     height: 25px;
+    border: 1px solid black;
 
 }
 .bottom-right {
@@ -132,6 +148,8 @@ body {
     border-image-source: linear-gradient(90deg, rgba(255,255,255,0) 0%, #919b9c 50%, rgba(255,255,255,1) 100%);
     border-image-slice: 1;
     padding: 5px;
+    width: calc(100% + 14px);
+    box-sizing: border-box;
 }
 
 .message-author {
