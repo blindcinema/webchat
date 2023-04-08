@@ -9,6 +9,6 @@ Deployed on https://blindcinema-webchat.netlify.app/
 - Avatar profile picture linked to the username string
 
 TODO: 
-[ ] Responsiveness
-[ ] Add and remove rooms
-[ ] List users online
+- [ ] Responsiveness
+- [ ] Add and remove rooms
+- [ ] List users online
