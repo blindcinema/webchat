@@ -30,14 +30,18 @@ export function LogInScreen(props) {
         <div className="login-screen">
             <div className="login-container">
                 Username:
-            <form onSubmit={handleSubmit} className="login-form">
-                <input type="text" value={formState || ""} style={{color:context.color}} onChange={handleChange} />
-                <button type="submit">Log in</button>
-                <button type="button" onClick={handleRandom}>Get Random name & color</button>
-            </form>
-            <div>Avatar:</div>
-            <img src={`data:image/svg+xml;utf8,${generatedAvatar}`} alt="avatar" className="generated-avatar-login" />
-            <input type="color" className="color-button" value={context.color} onChange={(e) => {context.setColor(e.target.value)}}></input>
+
+                <form onSubmit={handleSubmit} className="login-form">
+
+                    <input type="text" value={formState || ""} style={{color:context.color}} onChange={handleChange} />
+                    <button type="submit">Log in</button>
+                    <button type="button" onClick={handleRandom}>Get Random name & color</button>
+                </form>
+
+                <div>Avatar:</div>
+                
+                <img src={`data:image/svg+xml;utf8,${generatedAvatar}`} alt="avatar" className="generated-avatar-login" />
+                <input type="color" className="color-button" value={context.color} onChange={(e) => {context.setColor(e.target.value)}}></input>
             </div>
         </div>
     );

@@ -117,41 +117,39 @@ export function WindowElement(props) {
 
     return (
         
-        <div className="window" style={{position:"absolute", top:position.y, left:position.x, display: windowHide}} ref={draggableRef}  >
+        <div className="window" style={{position:"absolute", top:position.y, left:position.x, display: windowHide}} ref={draggableRef}>
             
             <div className="title-bar" onMouseDown={handleMouseDown} >
                 <div className="title-bar-text">Webchat</div>
                 <div className="title-bar-controls">
                     <button aria-label="Close" onClick={exitWindow}></button>
-                    </div>
+                </div>
             </div>
+
             <div className="window-body">
-             
                 <div className="tabs">
-                    <menu role="tablist" aria-label="Sample Tabs">
+                    <menu role="tablist" aria-label="Tabs">
                         <button role="tab" aria-selected="true" aria-controls="tab-A">general-chat</button>
                     </menu>
                 </div>
                   
                 <div className="chat-box" role="tabpanel" id="general-chat">
-                {messageComponents}
+                    {messageComponents}
                 </div>
-                <div className="user-info">
-                <img src={`data:image/svg+xml;utf8,${context.avatar}`} alt="avatar" className="generated-avatar bottom-right" />
 
-                <p style={{color:context.color}}>{props.username}</p>
+                <div className="user-info">
+                    <img src={`data:image/svg+xml;utf8,${context.avatar}`} alt="avatar" className="generated-avatar bottom-right" />
+                    <p style={{color:context.color}}>{props.username}</p>
                 </div>
 
                 <form className="submit-message-form" onSubmit={handleSubmit} > 
-                <div className="field-row input-box">
-                    <input id="message-form-input" type="text" onChange={handleChange} value={formState}  /> 
-                </div>
-                <button onClick={handleClick} type="submit" className="send-button">Send</button>
+                    <div className="field-row input-box">
+                        <input id="message-form-input" type="text" onChange={handleChange} value={formState}  /> 
+                    </div>
+                    <button onClick={handleClick} type="submit" className="send-button">Send</button>
                 </form>   
 
-
             </div>
-        </div>
-        
+        </div>        
     );
 };
