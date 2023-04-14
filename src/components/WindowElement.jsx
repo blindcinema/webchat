@@ -22,9 +22,7 @@ export function WindowElement(props) {
               const room = drone.subscribe("general");
               
               setClient(drone);
-              setChatRoom(room);
-  
-            
+              setChatRoom(room);     
             }
           });    
 
@@ -51,10 +49,10 @@ export function WindowElement(props) {
     const [formState, setFormState] = useState("");
     const context = useContext(UserContext);
 
-
     function handleChange(event) {
         setFormState(event.target.value);
     }
+    
     function handleSubmit(event) {
         event.preventDefault();
         setFormState("");
