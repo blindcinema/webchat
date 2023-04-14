@@ -11,8 +11,6 @@ export function WindowElement(props) {
     const [client, setClient] = useState(null);
     const [chatRoom, setChatRoom] = useState(null);
 
-
-
     useEffect(() => {
         const drone = new window.Scaledrone('fKtuq1ZynQbBUDab');
     
@@ -38,7 +36,6 @@ export function WindowElement(props) {
       ref: draggableRef
     });
 
-
     const [messages, setMessages] = useState([]);
     const messageComponents = messages.map((message)=> {
         return (<Message
@@ -53,15 +50,6 @@ export function WindowElement(props) {
 
     const [formState, setFormState] = useState("");
     const context = useContext(UserContext);
-
-
-
-
-
-
-    function handleClick() {
-
-    };
 
 
     function handleChange(event) {
@@ -90,7 +78,6 @@ export function WindowElement(props) {
         }
     }
 
-
     useEffect(()=> {
         if (chatRoom !== null && !ready ) {
             chatRoom.on("data", (data) => {
@@ -111,8 +98,6 @@ export function WindowElement(props) {
             context.setUsername("");
         }, 800);
     }
-
-
 
 
     return (
@@ -146,7 +131,7 @@ export function WindowElement(props) {
                     <div className="field-row input-box">
                         <input id="message-form-input" type="text" onChange={handleChange} value={formState}  /> 
                     </div>
-                    <button onClick={handleClick} type="submit" className="send-button">Send</button>
+                    <button type="submit" className="send-button">Send</button>
                 </form>   
 
             </div>
