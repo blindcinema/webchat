@@ -52,7 +52,7 @@ export function WindowElement(props) {
     function handleChange(event) {
         setFormState(event.target.value);
     }
-    
+
     function handleSubmit(event) {
         event.preventDefault();
         setFormState("");
@@ -96,7 +96,6 @@ export function WindowElement(props) {
             context.setUsername("");
         }, 800);
     }
-
 
     return (
         
